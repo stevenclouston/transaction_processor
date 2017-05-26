@@ -62,8 +62,6 @@ Steven Clouston
 
 This solution is based on the test below:
 
-The Test
-
 O#!/usr/bin/env ruby
 
 Assume you have three distributed data sources. Your task is to
