@@ -2,6 +2,7 @@
 **Synopsis**
 
 This is a program that collects three distributed data sources and returns an aggregated result.
+
 **Code Example**
 
 ```ruby
