@@ -48,14 +48,18 @@ puts results
 
 Git clone https://github.com/stevenclouston/transaction_processor.git
 
+run: ruby process_data.rb in Terminal
+
 **Tests**
 
 No tests have been written yet.
+
 **Contributors**
 
 Steven Clouston
 
 **More info about this project**
+
 This solution is based on the test below:
 
 The Test
