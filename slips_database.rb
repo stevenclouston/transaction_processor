@@ -1,5 +1,7 @@
 require_relative("slip")
+
 class SlipsDatabase
+  
   attr_accessor :all
 
   def initialize(params)
@@ -12,6 +14,7 @@ class SlipsDatabase
   def ids
     @all.map{|s| s[0]}
   end
+
   def slip(slip_id)
     @all[slip_id]
   end

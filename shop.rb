@@ -1,8 +1,9 @@
 class Shop
-  attr_accessor :id, :company_name
+
+  attr_accessor :id, :shop_name
 
   def initialize(params)
     @id = params[0]
-    @company_name = params[1]
+    @shop_name = params[1]
   end
 end

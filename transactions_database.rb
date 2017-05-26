@@ -1,5 +1,7 @@
 require_relative("transaction")
+
 class TransactionsDatabase
+  
   attr_accessor :all
   def initialize(params)
 
@@ -14,9 +16,6 @@ class TransactionsDatabase
   end
 
   def transaction(id)
-    @all[:id]
+    @all[id]
   end
-
-
-
 end

@@ -4,37 +4,33 @@ require_relative('transactions_database')
 require_relative('slips_database')
 require_relative('slip')
 
-require('byebug')
-
 class ProcessData
+
   @transactions
   @slips
-  @online_store_database
+  @shops_database
 
   def initialize(params)
-    @transactions = TransactionsDatabase.new(params[:transactions])
-    @slips = SlipsDatabase.new(params[:slips])
-    @online_store_database = ShopsDatabase.new(params[:store_database])
-
+    @transactions_database = TransactionsDatabase.new(params[:transactions])
+    @slips_database = SlipsDatabase.new(params[:slips])
+    @shops_database = ShopsDatabase.new(params[:store_database])
   end
 
   def process
-    slip_ids = @slips.ids
-    slip_ids.each do |slip_id|
-      slip = @slips.slip(slip_id)
+    results = {}
+    @slips_database.ids.each do |slip_id|
+      slip = @slips_database.slip(slip_id)
       number_transactions = slip.number_transactions
-      byebug
-      total_amount = slip.total_amount(@transactions)
-      byebug
+      total_amount = slip.total_amount(@transactions_database)
+      shop = @shops_database.all[slip.shop_id].shop_name
+      result = { number_transactions: number_transactions, total_amount: total_amount,shop: shop}
+      results[slip_id] = result
     end
+    return results
   end
-
 end
 
 coding_challenge = CodingChallenge.new
 process_data = ProcessData.new({slips: coding_challenge.slips, transactions: coding_challenge.transactions, store_database: coding_challenge.shops})
-process_data.process
-byebug
-
-
-Transactions.new(transactions)
+results = process_data.process
+puts results

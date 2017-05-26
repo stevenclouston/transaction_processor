@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # Assume you have three distributed data sources. Your task is to
 # collect all data from these sources and return an aggregated result.
-require('byebug')
 
 class CodingChallenge
+  
   attr_accessor :slips, :transactions, :shops, :result
 
   def initialize
