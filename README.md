@@ -61,8 +61,9 @@ This solution is based on the test below:
 The Test
 
 O#!/usr/bin/env ruby
-# Assume you have three distributed data sources. Your task is to
-# collect all data from these sources and return an aggregated result.
+
+Assume you have three distributed data sources. Your task is to
+collect all data from these sources and return an aggregated result.
 
 class CodingChallenge
 
